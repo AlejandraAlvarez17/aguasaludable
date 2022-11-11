@@ -6,6 +6,45 @@ h1 {
     color: rgb(6, 190, 15);
  }
 
+.padre{
+  display: grid;
+  grid-template-areas: " encabezado encabezado "
+                       " seccion     publicidad"
+                       " pie          pie ";
+  grid-template-columns:    5fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr ;
+}
+
+header{
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blue;
+    grid-area: encabezado;   
+ }
+ 
+ main{
+  grid-area: seccion;
+  background-color: plum;
+  
+ }
+ aside{
+  grid-area: publicidad;
+  background-color: brown;
+ }
+ footer{
+  grid-area: pie;
+  background-color: rgb(224, 64, 131);
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+ }
+ footer a i{
+  display: flex;
+  font-size: 30px;
+ 
+ }
+
  section {
     padding: 50px 30px 20px 60px;
     margin-left: 40px;
@@ -15,14 +54,46 @@ h1{
     font-size: 40px;
     text-align: center;
     line-height: 1.6;
+
  }
-header{
-    text-decoration: none;
+
+ header nav a{
+  text-decoration: none;
+  color: black;
  }
+ header div  { 
+    display: flex;
+   justify-content: flex-start;
+   width: 20%;
+ }
+
+ header div a img{
+   width: 70%;
+ 
+ }
+
+ header nav{
+   width: 60%;
+ }
+ header nav ul{
+   display: flex;
+   height: 100%;
+   justify-content:baseline;
+   flex-direction:column;
+   align-items:flex-end;
+ }
+
+ h2{
+  display: flex;
+  justify-content: center;
+  background-color: blueviolet;
+ }
+
  
  .contactanos{
     display: flex;
     justify-content: center;
+    margin-top: 10%;
 
  }
        
@@ -30,6 +101,22 @@ header{
     width: 80%;
     height: auto;
   }      
+
+  .aguasaludable{
+   display:flex;
+   flex-wrap: wrap;
+   gap: 10px;
+  }
+
+  .aguasaludable img{
+   border-radius: 5% ;
+   opacity: 0.6;
+  }
+
+  .aguasaludable img:hover{
+   opacity: 1;
+   border: solid 2px beige;
+  }
 
 ol{
      list-style-type: none;
@@ -46,6 +133,81 @@ a {
  fieldset {
     width: 50%;
  }
+  .table{
+   background-color: aqua;
+   display: flex;
+   justify-content:flex-start;
+   align-items: stretch;
+  }
+
+ .card{
+   display: flex;
+   flex-wrap: wrap;
+   background-color: blueviolet;
+   width: 300px;
+   justify-content: space-around;
+   border: solid 2px black;
+   margin: 5%;
+ }
+ .card_img{
+   width: 90%;
+   border-radius: 5%;
+ }
+
+ @media screen and  (max-width: 1024px) {
+  .padre{
+    grid-template-areas: " encabezado "
+                       " seccion"
+                       " pie ";
+  grid-template-columns:    5fr ;
+  grid-template-rows: 1fr 5fr 1fr ;
+  }
+aside{
+  display: none;
+}
+.galeria img{
+  width: 30%;
+  margin: 1%;
+}
+
+ }
   
-       
-       
+ 
+ @media screen and (max-width: 720px) {
+  .padre{
+    grid-template-areas: " encabezado "
+                       " seccion"
+                       " pie ";
+  grid-template-columns:    5fr ;
+  grid-template-rows: 1fr 5fr 1fr ;
+  }
+aside{
+  display: none;
+}
+.galeria img{
+  width: 50%;
+  margin: 1%;
+}
+ }
+ @media screen and (max-width: 400px) {
+  .padre{
+    grid-template-areas: " encabezado "
+    " seccion"
+    " pie ";
+grid-template-columns:    5fr ;
+grid-template-rows: 1fr 5fr 1fr ;
+}
+.galeria img{
+  width: 100%;
+  margin: 0%;
+}
+header nav {
+  width: 100%;
+  align-content: center;
+}
+}
+
+
+  
+
+  
